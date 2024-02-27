@@ -1,0 +1,27 @@
+.btn{
+    border-radius: 0 !important;
+    border: none;
+
+}
+
+.form-control{
+    border-radius: 0 !important;
+}
+
+.form-control:focus{
+    outline: none !important;
+}
+
+.error-text{
+    font-size: 12px;
+    color: red;
+}
+
+.btn:focus{
+    outline: none !important;
+}
+
+.card{
+    border-radius: 0;
+    border: none;
+}
