@@ -120,6 +120,7 @@ class AuthController extends Controller
     {
         Auth::logout();
         session()->regenerateToken();
+         CustomHelper::message("warning", "Logout Successful");
         return redirect()->route('admin.sign_in');
     }
 
@@ -128,6 +129,7 @@ class AuthController extends Controller
     {
         Auth::logout();
         session()->regenerateToken();
+        CustomHelper::message("warning", "Logout Successful");
         return redirect()->route('user.sign_in');
     }
 

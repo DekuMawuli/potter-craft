@@ -26,7 +26,7 @@ Route::prefix("")
     ->group(function (){
         Route::get("/dashboard", [\App\Http\Controllers\UserController::class, "dashboard"])->name("dashboard");
 ////        Route::get("/users", [\App\Http\Controllers\AdminController::class, "users"])->name("users");
-////        Route::get("/documents", [\App\Http\Controllers\AdminController::class, "documents"])->name("documents");
+        Route::get("/documents", [\App\Http\Controllers\UserController::class, "documents"])->name("documents");
         Route::post("/logout", [\App\Http\Controllers\AuthController::class, "userLogout"])->name("logout");
     });
 

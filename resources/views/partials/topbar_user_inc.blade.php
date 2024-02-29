@@ -12,7 +12,7 @@
                 <a class="nav-link" href="{{ route('user.dashboard') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Documents</a>
+                <a class="nav-link" href="{{ route('user.documents') }}">Documents</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"

@@ -22,9 +22,9 @@ class UserOnlyMiddleware
                 return $next($request);
             }
             CustomHelper::message("warning", "Access denied");
-            return redirect()->route('admin.sign_in');
+            return redirect()->route('user.sign_in');
         }
         CustomHelper::message("danger", "Authentication required");
-        return redirect()->route('admin.sign_in');
+        return redirect()->route('user.sign_in');
     }
 }
