@@ -2,7 +2,16 @@
 
 Potters Craft System is a Laravel 10.x based system designed to streamline pottery crafting processes. It provides a comprehensive set of tools for managing pottery production, inventory, sales, and customer interactions.
 
+
+### Getting started
+- Clone application
+- Cd into cloned application and run `composer install`
+- then run `php artisan db:seed` to have seeded users and depots to begin with
+- spin up the server by using `php artisan serve`
+
 ### Project Extra Structure
+
+
 
 #### Custom Helpers
 The `Custom Helpers` folder contains custom classes that enhance the project's functionality. These classes are designed to provide additional features or utilities that are not available in the standard Laravel framework.
