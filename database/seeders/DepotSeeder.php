@@ -28,7 +28,7 @@ class DepotSeeder extends Seeder
             ],
             [
                 "name" => "Depot C", "code" => CustomHelper::generateModelCode("DPT-"),
-                "location" => "Osu", "region" => "G.ACCRA", "description" => "Dealers in Romanian Tiles and plasters",
+                "location" => "Osu", "region" => "GREATER ACCRA", "description" => "Dealers in Romanian Tiles and plasters",
                 "status" => "inactive"
             ],
         ];

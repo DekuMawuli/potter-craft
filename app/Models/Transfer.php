@@ -21,6 +21,7 @@ class Transfer extends Model
         'recipient_depot_id',
         'document_id',
         'sender_id',
+        'item_id',
     ];
 
     /**
@@ -34,16 +35,17 @@ class Transfer extends Model
         'recipient_depot_id' => 'integer',
         'document_id' => 'integer',
         'sender_id' => 'integer',
+        'item_id' => 'integer',
     ];
 
     public function senderDepot(): BelongsTo
     {
-        return $this->belongsTo(Depot::class);
+        return $this->belongsTo(Depot::class, "sender_depot_id");
     }
 
     public function recipientDepot(): BelongsTo
     {
-        return $this->belongsTo(Depot::class);
+        return $this->belongsTo(Depot::class, "recipient_depot_id");
     }
 
     public function document(): BelongsTo
@@ -53,6 +55,11 @@ class Transfer extends Model
 
     public function sender(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "sender_id");
+    }
+
+    public function item(): BelongsTo
+    {
+        return $this->belongsTo(Item::class);
     }
 }

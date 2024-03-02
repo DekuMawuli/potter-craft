@@ -23,8 +23,17 @@ class AdminController extends Controller
         return view("depots");
     }
 
-     public function documents()
+    public function items()
     {
         return view("items");
+    }
+    public function transfers()
+    {
+        return view("transfers");
+    }
+
+     public function documents()
+    {
+        return view("documents");
     }
 }

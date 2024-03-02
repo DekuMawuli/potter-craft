@@ -28,6 +28,10 @@ Route::prefix("")
 ////        Route::get("/users", [\App\Http\Controllers\AdminController::class, "users"])->name("users");
         Route::get("/documents", [\App\Http\Controllers\UserController::class, "documents"])->name("documents");
         Route::post("/logout", [\App\Http\Controllers\AuthController::class, "userLogout"])->name("logout");
+        Route::get("/items", [\App\Http\Controllers\UserController::class, "items"])->name("items");
+
+        Route::get("/transfers", [\App\Http\Controllers\UserController::class, "transfers"])->name("transfers");
+
         Route::post("/products",function (){
             return "ok";
         } )->name("products");
@@ -43,5 +47,7 @@ Route::prefix("admin")
         Route::get("/users", [\App\Http\Controllers\AdminController::class, "users"])->name("users");
         Route::get("/depots", [\App\Http\Controllers\AdminController::class, "depots"])->name("depots");
         Route::get("/documents", [\App\Http\Controllers\AdminController::class, "documents"])->name("documents");
+        Route::get("/items", [\App\Http\Controllers\AdminController::class, "items"])->name("items");
+        Route::get("/transfers", [\App\Http\Controllers\AdminController::class, "transfers"])->name("transfers");
         Route::post("/logout", [\App\Http\Controllers\AuthController::class, "logout"])->name("logout");
     });

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('recipient_depot_id')->constrained('depots')->cascadeOnDelete();
             $table->foreignId('document_id')->constrained()->cascadeOnDelete();
             $table->foreignId('sender_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('item_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
 

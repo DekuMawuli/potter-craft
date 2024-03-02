@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Depot;
 use App\Models\Document;
+use App\Models\Item;
 use App\Models\Transfer;
 use App\Models\User;
 
@@ -29,6 +30,7 @@ class TransferFactory extends Factory
             'recipient_depot_id' => Depot::factory(),
             'document_id' => Document::factory(),
             'sender_id' => User::factory(),
+            'item_id' => Item::factory(),
         ];
     }
 }

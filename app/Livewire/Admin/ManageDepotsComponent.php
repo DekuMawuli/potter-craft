@@ -70,7 +70,7 @@ class ManageDepotsComponent extends Component
     {
 
         return view('livewire.admin.manage-depots-component', [
-            'depots' => Depot::query()->paginate(2)
+            'depots' => Depot::query()->paginate(10)
         ]);
     }
 
@@ -79,6 +79,7 @@ class ManageDepotsComponent extends Component
     private function initVar()
     {
         $this->newDepot = new Depot();
+        $this->newDepot->description = "";
     }
 
 

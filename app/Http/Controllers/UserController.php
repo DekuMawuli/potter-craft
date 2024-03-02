@@ -20,6 +20,15 @@ class UserController extends Controller
     }
 
 
+    public function items()
+    {
+        return view("user.items");
+    }
+
+    public function transfers()
+    {
+        return view("user.transfers");
+    }
 
 
 /**

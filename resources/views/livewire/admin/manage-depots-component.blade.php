@@ -47,8 +47,13 @@
                             <select class="form-control" wire:model.lazy="newDepot.status">
                                 <option>--- Select Status ---</option>
                                 <option value="active">Active</option>
-                                <option value="active">Inactive</option>
+                                <option value="inactive">Inactive</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Description</label>
+                            <textarea class="form-control" wire:model="newDepot.description" rows="3"></textarea>
+                            @error("newDepot.description")<small id="helpId" class="form-text error-text">{{ $message }}</small>@enderror
                         </div>
 
                         <div class="form-group">
