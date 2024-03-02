@@ -16,9 +16,21 @@ class DepotSeeder extends Seeder
     public function run(): void
     {
         $depots = [
-            ["name" => "Depot A", "code" => CustomHelper::generateModelCode("DPT-")],
-            ["name" => "Depot B", "code" => CustomHelper::generateModelCode("DPT-")],
-            ["name" => "Depot C", "code" => CustomHelper::generateModelCode("DPT-")],
+            [
+                "name" => "Depot A", "code" => CustomHelper::generateModelCode("DPT-"),
+                "location" => "abrepo-junction", "region" => "ASHANTI", "description" => "Dealers in ceramic tiles",
+                "status" => "active"
+            ],
+            [
+                "name" => "Depot B", "code" => CustomHelper::generateModelCode("DPT-"),
+                "location" => "Navrongo", "region" => "UPPER EAST", "description" => "Dealers in Italian Tiles",
+                "status" => "active"
+            ],
+            [
+                "name" => "Depot C", "code" => CustomHelper::generateModelCode("DPT-"),
+                "location" => "Osu", "region" => "G.ACCRA", "description" => "Dealers in Romanian Tiles and plasters",
+                "status" => "inactive"
+            ],
         ];
 
         DB::transaction(function () use ($depots){

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Depot extends Model
 {
@@ -17,6 +18,10 @@ class Depot extends Model
     protected $fillable = [
         'code',
         'name',
+        'location',
+        'region',
+        'description',
+        'status',
     ];
 
     /**
@@ -27,4 +32,19 @@ class Depot extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+    public function transfers(): HasMany
+    {
+        return $this->hasMany(Transfer::class);
+    }
+
+    public function users(): HasMany
+    {
+        return $this->hasMany(User::class);
+    }
+
+    public function documents(): HasMany
+    {
+        return $this->hasMany(Document::class);
+    }
 }

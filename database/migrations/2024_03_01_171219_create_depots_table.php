@@ -11,19 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
-
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('depots', function (Blueprint $table) {
             $table->id();
             $table->string('code', 20)->unique();
-            $table->foreignId('document_id')->constrained()->cascadeOnDelete();
             $table->string('name');
-            $table->string('stock_quantity');
-            $table->decimal('price', 8, 2);
+            $table->string('location');
+            $table->string('region');
+            $table->text('description');
+            $table->string('status', 20);
             $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('depots');
     }
 };

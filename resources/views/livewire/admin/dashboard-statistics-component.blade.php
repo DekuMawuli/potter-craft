@@ -1,4 +1,4 @@
-<div class="row" wire:poll.15s="fetchUsers">
+<div class="row" wire:poll.5s="fetchUsers">
     <div class="col-12 col-md-3 ">
         <div class="card mb-3 mb-md-0 shadow-sm">
             <div class="card-body">

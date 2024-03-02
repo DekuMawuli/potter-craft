@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('documents', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('code', 20)->unique();
-            $table->foreignId('depot_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('filename')->unique();
-            $table->enum('status', ["error","success","pending"])->default('pending');
+            $table->foreignId('document_id')->constrained()->cascadeOnDelete();
+            $table->string('name')->unique();
+            $table->text('description');
+            $table->text('short_description');
+            $table->enum('status', ["available",""]);
             $table->timestamps();
         });
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('items');
     }
 };

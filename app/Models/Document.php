@@ -21,6 +21,7 @@ class Document extends Model
         'depot_id',
         'user_id',
         'filename',
+        'sync_endpoint_id',
         'status',
     ];
 
@@ -33,6 +34,7 @@ class Document extends Model
         'id' => 'integer',
         'depot_id' => 'integer',
         'user_id' => 'integer',
+        'sync_endpoint_id' => 'integer',
     ];
 
     public function items(): HasMany
@@ -48,5 +50,10 @@ class Document extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function syncEndpoint(): BelongsTo
+    {
+        return $this->belongsTo(SyncEndpoint::class);
     }
 }

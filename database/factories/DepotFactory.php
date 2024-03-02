@@ -23,6 +23,10 @@ class DepotFactory extends Factory
         return [
             'code' => $this->faker->regexify('[A-Za-z0-9]{20}'),
             'name' => $this->faker->name(),
+            'location' => $this->faker->word(),
+            'region' => $this->faker->word(),
+            'description' => $this->faker->text(),
+            'status' => $this->faker->regexify('[A-Za-z0-9]{20}'),
         ];
     }
 }

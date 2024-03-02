@@ -17,6 +17,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.documents') }}">Documents</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.depots') }}">Depots</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">{{ \Illuminate\Support\Facades\Auth::user()->name ?? 'New Admin' }}</a>

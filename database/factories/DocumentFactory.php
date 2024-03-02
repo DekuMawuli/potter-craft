@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Depot;
 use App\Models\Document;
+use App\Models\SyncEndpoint;
 use App\Models\User;
 
 class DocumentFactory extends Factory
@@ -27,7 +28,8 @@ class DocumentFactory extends Factory
             'depot_id' => Depot::factory(),
             'user_id' => User::factory(),
             'filename' => $this->faker->word(),
-            'status' => $this->faker->randomElement(["error","success","pending"]),
+            'sync_endpoint_id' => SyncEndpoint::factory(),
+            'status' => $this->faker->randomElement(["synced","not_synced"]),
         ];
     }
 }

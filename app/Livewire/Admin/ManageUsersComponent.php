@@ -25,7 +25,7 @@ class ManageUsersComponent extends Component
         "newUser.email" => "required|email|unique:users,email",
         "newUser.phone" => "required|numeric|unique:users,phone",
         "newUser.role" => "required|string",
-        "newUser.depot_id" => "required|int|unique:depots,id"
+        "newUser.depot_id" => "sometimes|int|unique:depots,id"
     ];
 
     public function saveRecord()
@@ -36,12 +36,13 @@ class ManageUsersComponent extends Component
             "newUser.email" => "required|email",
             "newUser.phone" => "required|numeric",
             "newUser.role" => "required|string",
+            "newUser.depot_id" => "required|int",
         ]);
             $this->newUser->save();
             $this->updateMode = false;
             CustomHelper::message("info", "User updated Successfully");
         }else{
-            $this->validate();
+//            $this->validate();
             $this->newUser->code = CustomHelper::generateModelCode("USSR-");
             $this->newUser->password = Hash::make($this->newUser->phone);
             $this->newUser->save();

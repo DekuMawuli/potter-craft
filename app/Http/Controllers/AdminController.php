@@ -18,12 +18,13 @@ class AdminController extends Controller
         return view("users");
     }
 
+    public function depots()
+    {
+        return view("depots");
+    }
+
      public function documents()
     {
-        $documents = Document::query()
-            ->with(['depot', 'user'])
-            ->orderByDesc('created_at')
-            ->get();
-        return view("items", compact('documents'));
+        return view("items");
     }
 }

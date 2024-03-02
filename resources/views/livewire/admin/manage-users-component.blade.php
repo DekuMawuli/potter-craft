@@ -27,6 +27,7 @@
                             </select>
                            @error("newUser.role")<small id="helpId" class="form-text error-text">{{ $message }}</small>@enderror
                         </div>
+
                         <div x-show="role === 'user'">
                             <div class="form-group">
                                 <label for="">Depot</label>
